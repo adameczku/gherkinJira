@@ -1,10 +1,10 @@
-Feature:
-  As a User
-  In order to Use the system
-  I want to Log in
+Feature: Użytkownik może zalogować się do aplikacji
 
-  Scenario:
-    Given <User> is on <login> page
-    When <User> enters credentials
-    Then User is logged in
-    
+  Background: Aplikacja bankowa jest zainstalowana na urządzeniu wraz z odpowiednim środowiskiem
+    Given aplikacja Santander Mobile jest otwarta
+    And prawidłowe środowisko jest wybrane
+
+  Scenario: Użytkownik może zalogować się do aplikacji po podaniu prawidłowych danych
+    When użytkownik klika w przycisk 'Zaloguj'
+    And użytkownik loguje się do aplikacji wprowadzając login i haslo
+    Then użytkownik jest prawidłowo zalogowany do aplikacji
